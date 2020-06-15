@@ -8,4 +8,8 @@ resolvers += "Typesafe Releases" at "https://repo.typesafe.com/typesafe/releases
 
 javacOptions ++= Seq("-source", "1.8", "-target", "1.8", "-Xlint")
 
-libraryDependencies ++= Seq("org.apache.spark" %% "spark-core" % "2.4.4")
+val sparkVersion = "2.4.6"
+libraryDependencies ++= Seq(
+  "org.apache.spark" %% "spark-core" % sparkVersion,
+  "org.apache.spark" %% "spark-streaming" % sparkVersion % "provided"
+)
